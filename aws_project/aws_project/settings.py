@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uyo$*ath@i_a)90+h4_d-^g6pxgga1yiz_shp7vzo3x$&h^g-u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ec2-54-245-181-7.us-west-2.compute.amazonaws.com", "172.31.35.115", "35.166.204.248","balance-my-traffic-13035830.us-west-2.elb.amazonaws.com", "simranmemon.link"]
+ALLOWED_HOSTS = ["simranmemon.link"]
 
 
 # Application definition
@@ -153,10 +153,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'documents')
 
 MEDIA_URL = '/media/'
 
-AWS_REGION = "us-west-2"
-AWS_ACCESS_KEY_ID = 'AKIAXF2CYLXHPHJP4AN7'
-AWS_SECRET_ACCESS_KEY = 'UjslbV8+nSbGtF9Y377o9ZkBd7ozPe1UIWsS6Gq1'
-AWS_STORAGE_BUCKET_NAME = 'my-s3-account-test-bucket'
+AWS_REGION = "AWS REGION"
+AWS_ACCESS_KEY_ID = 'ENTER YOUR KEY ID'
+AWS_SECRET_ACCESS_KEY = 'ENTER YOUR SECRET KEY'
+AWS_STORAGE_BUCKET_NAME = 'YOUR BUCKET NAME'
 
 #DEFAULT_FILE_STORAGE = 's3_app.storages_backends.MyS3Storage'
 #DEFAULT_FILE_STORAGE = 's3_app.storage_backends.MyS3Storage'
@@ -167,7 +167,7 @@ AWS_LOCATION="documents"
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
-CLOUDFRONT_DOMAIN = "d24yhrbswvxx0j.cloudfront.net"
-CLOUDFRONT_ID = "E1Q0ZJSVKK1607"
-AWS_S3_CUSTOM_DOMAIN = "d24yhrbswvxx0j.cloudfront.net"
+CLOUDFRONT_DOMAIN = "YOUR CLOUDFRONT DISTRIBUTION"
+CLOUDFRONT_ID = "CLOUD FRONT ID"
+AWS_S3_CUSTOM_DOMAIN = "YOUR DOMAIN"
 AWS_S3_FILE_OVERWRITE = True
