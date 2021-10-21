@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="white-space: nowrap;">First Name</th>
+        <th style="white-space: nowrap;">Last Name</th>
+        <th>Description</th>
+        <th>Filename</th>
+        <th style="white-space: nowrap;">Create Time</th>
+        <th style="white-space: nowrap;">Last Updated Time</th>
+        <th>Download</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s3_file in storage %}
+        <tr>
+          <td>{{ s3_file.author.first_name }}</td>
+          <td>{{ s3_file.author.last_name }}</td>
+          <td>{{ s3_file.description }}</td>
+          <td>{{ s3_file.s3_storage_object.name}}</td>
+          <td style="white-space: nowrap;">{{ s3_file.created_at}}</td>
+          <td style="white-space: nowrap;">{{ s3_file.updated_at}}</td>
+          <td>
+		  <a href="{{ s3_file.s3_storage_object.url }}" class="btn btn-primary btn-sm" target="_blank">
+                Download
+            </a>
+          </td>
+
+          <td>
+            <form method="post" action="{% url 'update_file' s3_file.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary btn-sm">Update<//button>
+            </form>
+          </td>
+
+          <td>
+            <form method="post" action="{% url 'delete_file' s3_file.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
