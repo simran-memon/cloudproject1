@@ -11,8 +11,8 @@ import boto3
 s3 = boto3.resource(
     service_name='s3',
     region_name='us-west-2',
-    aws_access_key_id='AKIAXF2CYLXHERZWCBUW',
-    aws_secret_access_key='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'
+    aws_access_key_id='XXXXXXXXXX',
+    aws_secret_access_key='XXXXXXXXXXXXXXXX'
 )
 
 class Home(TemplateView):
